@@ -1,48 +1,32 @@
-﻿using _06libPedidos;
+﻿global using _06libPedidos; // Son librerias globales, primero se ponen los global
+using _06AppPedidos;
 
-//clsClients client;
+int opcion = 0;
+// Crear menu de opciones, colocar dentro de un ciclo do while
 
-// Establecer la relacion y la dependencia
-//client = new clsClients();// Constructor
-//client.idClient = 1; // accesor
-//client.FullName = "Luis Jacobo Hernandez";
-//client.Rfc = "HECL1503";
-//Console.WriteLine(client.ToString());
-// Creo un accesor para poder acceder al nombre de la persona.
-    
-clsProductos Producto = new clsProductos(); // Creo un objeto de la clase producto
-Producto.idProducto = 1; 
-Producto.Description = "REF MANZANA 600 ML";
-Producto.CodigoBarras = "001";
+do
+{
+    Console.WriteLine("Menu de opciones");
+    Console.WriteLine();
+    Console.WriteLine("1. Ejmeplo de cliente");
+    Console.WriteLine("2. Ejmeplo de record de productos");
+    Console.WriteLine("3. Ejmeplo de record de paso de parametros a un Método");
+    Console.WriteLine("20. Salir");
+    opcion = Convert.ToInt32(Console.ReadLine()); // Para ingresar y convertir el valor de string a int
+    // Utilizamos un switch
+    switch (opcion)
+    {
+        case 1: // En caso de que sea uno voy a llamar a las funciones principales
+            FuncionesPrincipales.EjemploCliente(); // Recordar usar el name space, es decir el using de arriga
+            break; // En cada case, tengo que colocar el break que sirve para salir de un bloque
 
-clsProductos Producto2 = new clsProductos();
-Producto2 = Producto;
-Producto2.CodigoBarras = "0";
+        case 2:
+            FuncionesPrincipales.EjenploRecordProducto();
+            break;
+        default:
+            break;
 
-
-// Crear un record de producto
-recProductos rProducto = new recProductos(1,"REF MANZANA 600 ML", "001");
-recProductos rProducto2 = rProducto with { CodigoBarras = "0"}; // Se pasan los valores excepto el codigo de barras.
-
-// Console.WriteLine()
-// Puedo omitir el ToString ya que automaticamente va a omitir
-Console.WriteLine("Producto: "+ Producto);
-Console.WriteLine("Producto2: " + Producto2);
-
-Console.WriteLine("rProducto: " + rProducto);
-Console.WriteLine("rProducto2: " + rProducto2);
-
-// Comparación
-if (Producto == Producto2)
-    Console.WriteLine("Los objetos son iguales");
-else
-    Console.WriteLine("Los objetos son diferentes");
-
-if (rProducto == rProducto2)
-    Console.WriteLine("Los records son iguales");
-else
-    Console.WriteLine("Los records son diferentes");
-
-
+    }
+} while (opcion != 20);
 
 
