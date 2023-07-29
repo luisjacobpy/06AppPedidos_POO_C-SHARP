@@ -33,11 +33,13 @@ namespace _06libPedidos
                 $"Porcentaje Ieps: {PorcentajeIeps.ToString()}";
         }
 
-        public decimal DesglosaImpuestos(out decimal MontoIva, out decimal MontoIeps)
+        public decimal DesglosaImpuestos(recMontosImpuestos Montos)
         {
             decimal resultado = 0;
-            resultado = clsCalculoPrecios.DesglosaImpuestos(PrecioPublico, PorcentajeIva, PorcentajeIeps,
-                                                out MontoIva, out MontoIeps);
+            // Asignamos los porcentajes
+            recImpuestos Impuestos = new recImpuestos(PorcentajeIva, PorcentajeIeps); // Pasamos el PorcentajeIva de la clase y el PorcentajeIeps
+
+            resultado = clsCalculoPrecios.DesglosaImpuestos(PrecioPublico, Impuestos, Montos); // Cambiamos los porcentajes por el registro impuesto
             return resultado;
         }
 

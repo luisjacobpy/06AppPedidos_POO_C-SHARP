@@ -16,4 +16,30 @@ public record class recProductos
         this.Description = description; 
         this.CodigoBarras = codigobarras;
     }
+
+}
+// Record para Iva y Ieps
+public record struct recImpuestos // Record de tipo struct
+{
+    public decimal PorcentajeIva { get; set; }
+    public decimal PorcentajeIeps { get; set; }
+    // Constructor
+    public recImpuestos(decimal porIva, decimal porIeps)
+    {
+        PorcentajeIva = porIva;
+        PorcentajeIeps = porIeps;
+    }
+}
+// Record para los montos
+public record class recMontosImpuestos
+{
+    public decimal MontoIva { get; set; }
+    public decimal MontoIeps { get; set; }
+
+    // Constructor
+    public recMontosImpuestos (decimal montoIva, decimal montoIeps)
+    {
+        MontoIva = montoIva;
+        MontoIeps = montoIeps;
+    }
 }

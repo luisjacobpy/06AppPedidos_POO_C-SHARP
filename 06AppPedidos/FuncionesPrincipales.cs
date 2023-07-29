@@ -74,15 +74,15 @@ namespace _06AppPedidos
             Producto.PrecioMayoreo = 17;
             Producto.PorcentajeIva = 16;
             Producto.PorcentajeIeps = 8;
-            decimal precioSinImpuestos, MontoIva, MontoIeps;
+            decimal precioSinImpuestos, MontoIva = 0, MontoIeps = 0;
             Console.WriteLine(Producto);
+            // Declaramos recMontoImpuestos
+            recMontosImpuestos Montos = new recMontosImpuestos(0, 0); // Tengo que instanciarla con los valores iniciales
             // Calculo el precio sin impuestos
-            precioSinImpuestos = Producto.DesglosaImpuestos(out MontoIva, out MontoIeps);
+            precioSinImpuestos = Producto.DesglosaImpuestos(Montos);
             Console.WriteLine( precioSinImpuestos.ToString("C"));
-            Console.WriteLine(MontoIva.ToString("C"));
-            Console.WriteLine(MontoIva.ToString("C"));
-            Console.WriteLine(MontoIeps.ToString("C"));
-
+            Console.WriteLine(Montos.ToString());
+            
 
 
         }
