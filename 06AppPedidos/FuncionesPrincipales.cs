@@ -61,6 +61,28 @@ namespace _06AppPedidos
                 Console.WriteLine("Los records son iguales");
             else
                 Console.WriteLine("Los records son diferentes");
+        }
+
+
+        public static void EjemploDesglosaImpuestos()
+        {
+            clsProductosPrecios Producto = new clsProductosPrecios(); // Decloaro una variable de la clase ProductosPrecios
+            Producto.idProducto = 1;
+            Producto.Description = "REF MANZANA 600 ML";
+            Producto.CodigoBarras = "001";
+            Producto.PrecioPublico = 17.5m;
+            Producto.PrecioMayoreo = 17;
+            Producto.PorcentajeIva = 16;
+            Producto.PorcentajeIeps = 8;
+            decimal precioSinImpuestos, MontoIva, MontoIeps;
+            Console.WriteLine(Producto);
+            // Calculo el precio sin impuestos
+            precioSinImpuestos = Producto.DesglosaImpuestos(out MontoIva, out MontoIeps);
+            Console.WriteLine( precioSinImpuestos.ToString("C"));
+            Console.WriteLine(MontoIva.ToString("C"));
+            Console.WriteLine(MontoIva.ToString("C"));
+            Console.WriteLine(MontoIeps.ToString("C"));
+
 
 
         }

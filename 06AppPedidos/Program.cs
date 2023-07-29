@@ -23,6 +23,10 @@ do
         case 2:
             FuncionesPrincipales.EjenploRecordProducto();
             break;
+
+        case 3:
+            FuncionesPrincipales.EjemploDesglosaImpuestos();
+            break;
         default:
             break;
 
