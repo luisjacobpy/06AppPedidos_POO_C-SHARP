@@ -86,6 +86,52 @@ namespace _06AppPedidos
 
 
         }
+        // Uso de colecciones
+        public static void EjemploColeccionesClientes() 
+        {
+            List<clsClients> Clientes = new List<clsClients>(); // Coloca la calse clientes en la parte del generico
+            int opcion = 0;
+            do
+            {
+                Console.WriteLine("Opciones de la lista de clientes");
+                Console.WriteLine();
+                Console.WriteLine("1.Agregar cliente");
+                Console.WriteLine("2. Mostrar lista");
+                Console.WriteLine("3. Eliminar cliente");
+                Console.WriteLine("4. Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        Console.WriteLine("Dame los datos del cliente");
+                        clsClients cliente = new clsClients(); // Objeto cliente
+                        Console.WriteLine("Dame el id del cliente");
+                        cliente.idClient = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Dame el nombre completo del cliente");
+                        cliente.FullName = Console.ReadLine();
+                        Console.WriteLine("Dame el RFC del cliente");
+                        cliente.Rfc = Console.ReadLine();
+                        Clientes.Add(cliente); // A mi lista de clientes le agrego el cliente.
+                        break;
+                    case 2:
+                        //Mostrar la lista de clietes
+                        foreach (clsClients item in Clientes)
+                        {
+                            Console.WriteLine(item.ToString());
+                        }
+                        break;
+                    case 3:
+                        // Eliminar cliente
+                        Console.WriteLine("Dame la posición de la lista del elemento que voy a eliminar");
+                        int posicion = Convert.ToInt32(Console.ReadLine());
+                        Clientes.RemoveAt(posicion);// Metodo para eliminar un elemento debo idicar la posoción del elemento que debo eleiminar.
+                        break;
+
+
+                }
+            } while (opcion != 4);
+        }         
+        
         #endregion
 
     }
