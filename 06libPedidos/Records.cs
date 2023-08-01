@@ -6,9 +6,9 @@
 // La palabra reservada this, nos indica que la propiedad es de este elemento.
 public record class recProductos 
 {
-    public int idProducto { get; set; }
-    public string Description { get; set; }
-    public string CodigoBarras { get; set; }
+    public int idProducto { get; init; } // Modifico los productos para que sean solo de lectura, se coloca init para que solo atraves del contructor se coloque os valores
+    public string Description { get; init; }
+    public string CodigoBarras { get; init; }
 
     public recProductos(int id, string description, string codigobarras) 
     {

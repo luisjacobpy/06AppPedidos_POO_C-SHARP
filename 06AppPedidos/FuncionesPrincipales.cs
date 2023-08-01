@@ -131,6 +131,47 @@ namespace _06AppPedidos
                 }
             } while (opcion != 4);
         }         
+
+        public static void EjemploDiccionario()
+        {
+            ctrObtenProductos cProductos = new ctrObtenProductos(); // Intancia
+            cProductos.ObtenProductos(); // Obtener todos los productos del repositorio
+            int opcion = 0;
+
+            do
+            {
+                Console.WriteLine("Opciones del Diccionario de productos");
+                Console.WriteLine();
+                Console.WriteLine("1.Ver la lista de productos");
+                Console.WriteLine("2.Buscar un producto por código de barras");
+                Console.WriteLine("3. Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        foreach (recProductos item in cProductos.Productos.Values) // Se agrega Values porque es un Diccionario
+                        {
+                            Console.WriteLine(item.ToString());
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("Dame un código de barras");
+                        // Declaro una variable que reciba el codigo
+                        string codigoRecibido = Console.ReadLine();
+                        recProductos producto;// Para obtener el valor
+
+                        break;
+                    case 3:
+                        // Eliminar cliente
+                        Console.WriteLine("Dame la posición de la lista del elemento que voy a eliminar");
+                        int posicion = Convert.ToInt32(Console.ReadLine());
+                        Clientes.RemoveAt(posicion);// Metodo para eliminar un elemento debo idicar la posoción del elemento que debo eleiminar.
+                        break;
+
+
+                }
+            } while (opcion != 3);
+        }
         
         #endregion
 
