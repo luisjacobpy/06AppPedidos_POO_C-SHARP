@@ -159,16 +159,11 @@ namespace _06AppPedidos
                         // Declaro una variable que reciba el codigo
                         string codigoRecibido = Console.ReadLine();
                         recProductos producto;// Para obtener el valor
-
+                        if(cProductos.ObtenProducto(codigoRecibido, out producto))
+                            Console.WriteLine("El valor encontrado es:" + producto.ToString());
+                        else
+                            Console.WriteLine("El producto no se encontro");
                         break;
-                    case 3:
-                        // Eliminar cliente
-                        Console.WriteLine("Dame la posición de la lista del elemento que voy a eliminar");
-                        int posicion = Convert.ToInt32(Console.ReadLine());
-                        Clientes.RemoveAt(posicion);// Metodo para eliminar un elemento debo idicar la posoción del elemento que debo eleiminar.
-                        break;
-
-
                 }
             } while (opcion != 3);
         }

@@ -31,9 +31,9 @@ namespace _06libPedidos
             Productos = repoProductos.ObtenTodos(); // Obtener los datos del repositorio
         }
 
-        public bool ObtenProducto(string, codigoBarras, out recProductos producto)  // Obtener un solo producto en la lista dado un codigo de barras
+        public bool ObtenProducto(string codigobarras, out recProductos producto)  // Obtener un solo producto en la lista dado un codigo de barras
         {
-            return Productos.TryGetValue(codigoBarras, out producto); // Este metodo es un boolean, si encuentra el producto es True
+            return Productos.TryGetValue(codigobarras, out producto); // Este metodo es un boolean, si encuentra el producto es True
         
         
         }
