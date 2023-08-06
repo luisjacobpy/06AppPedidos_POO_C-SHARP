@@ -10,15 +10,15 @@ namespace _06libPedidos
     public class ctrObtenProductos
     {
         #region Propiedades
-        private clsRepositorioMemProductos repoProductos;
+        private intRepositorioProductos repoProductos;
         public Dictionary<string, recProductos> Productos { get; set; }
         #endregion
 
         #region Constructor
         // Instanciar en el constructor
-        public ctrObtenProductos() 
+        public ctrObtenProductos(intRepositorioProductos prepoProductos) // La forma de recibir la implementación es atraves del constructor, le llamo prepoProductos, para no confundirlo con mi repoProductos
         {
-            repoProductos = new clsRepositorioMemProductos(); // Instacio productos
+            repoProductos = prepoProductos; // Instacio productos
             Productos = new Dictionary<string, recProductos>();
 
         }

@@ -134,7 +134,8 @@ namespace _06AppPedidos
 
         public static void EjemploDiccionario()
         {
-            ctrObtenProductos cProductos = new ctrObtenProductos(); // Intancia
+            clsRepositorioMemProductos repoMProductos = new clsRepositorioMemProductos();
+            ctrObtenProductos cProductos = new ctrObtenProductos(repoMProductos); // Intancia, en el contructor le mando mi repoMProductos
             cProductos.ObtenProductos(); // Obtener todos los productos del repositorio
             int opcion = 0;
 

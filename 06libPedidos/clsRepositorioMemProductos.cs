@@ -10,7 +10,7 @@ namespace _06libPedidos
     /*
      Esta clase sirve para acceder a una fuente de datos y recuperar los datos
      */
-    public class clsRepositorioMemProductos 
+    public class clsRepositorioMemProductos : intRepositorioProductos
     {
         #region Propiedades
         #endregion
