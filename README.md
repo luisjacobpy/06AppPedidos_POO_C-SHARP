@@ -37,7 +37,7 @@ Puedes ejecutar la aplicación a través de un ciclo de menú que te permite sel
 
 Siéntete libre de contribuir a este repositorio agregando más ejemplos o mejorando los existentes. Las contribuciones son bienvenidas.
 
-¡Diviértete explorando los ejemplos de C#! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto!
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto!
 
 ## Conocimientos de C# y .NET aplicados
 
