@@ -16,6 +16,7 @@ Este repositorio contiene ejemplos de código en C# que cubren varios conceptos 
 ## Requisitos
 
 Asegúrate de tener instalado el entorno de desarrollo de C# en tu máquina antes de ejecutar estos ejemplos.
+En el programa utilizo NET06, asegurate de utilizar NET06 o suerior. 
 
 ## Ejecución
 
